@@ -1,0 +1,10 @@
+C:\Users\Dev\source\repos\BinarySerializationGenerator\BinarySerializationGenerator\bin\Debug\netstandard2.0\BinarySerializationGenerator.deps.json
+C:\Users\Dev\source\repos\BinarySerializationGenerator\BinarySerializationGenerator\bin\Debug\netstandard2.0\BinarySerializationGenerator.dll
+C:\Users\Dev\source\repos\BinarySerializationGenerator\BinarySerializationGenerator\bin\Debug\netstandard2.0\BinarySerializationGenerator.pdb
+C:\Users\Dev\source\repos\BinarySerializationGenerator\BinarySerializationGenerator\obj\Debug\netstandard2.0\BinarySerializationGenerator.csproj.AssemblyReference.cache
+C:\Users\Dev\source\repos\BinarySerializationGenerator\BinarySerializationGenerator\obj\Debug\netstandard2.0\BinarySerializationGenerator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dev\source\repos\BinarySerializationGenerator\BinarySerializationGenerator\obj\Debug\netstandard2.0\BinarySerializationGenerator.AssemblyInfoInputs.cache
+C:\Users\Dev\source\repos\BinarySerializationGenerator\BinarySerializationGenerator\obj\Debug\netstandard2.0\BinarySerializationGenerator.AssemblyInfo.cs
+C:\Users\Dev\source\repos\BinarySerializationGenerator\BinarySerializationGenerator\obj\Debug\netstandard2.0\BinarySerializationGenerator.csproj.CoreCompileInputs.cache
+C:\Users\Dev\source\repos\BinarySerializationGenerator\BinarySerializationGenerator\obj\Debug\netstandard2.0\BinarySerializationGenerator.dll
+C:\Users\Dev\source\repos\BinarySerializationGenerator\BinarySerializationGenerator\obj\Debug\netstandard2.0\BinarySerializationGenerator.pdb
