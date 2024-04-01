@@ -24,7 +24,12 @@ namespace BinarySerializationGenerator
             }
             if (IsDeclaredAbstract(typeDeclarationSyntax))
             {
-
+                context.ReportDiagnostic(Diagnostic.Create(BinarySerializationGenerator.TypeMustNotBeAbstractDescriptor, binarySerializationAttributeSyntax.GetLocation()));
+                return;
+            }
+            if (IsTypeInterface(typeDeclarationSyntax))
+            {
+                context.ReportDiagnostic(Diagnostic.Create(BinarySerializationGenerator.TypeMustNotBeAnInterfaceDescriptor, binarySerializationAttributeSyntax.GetLocation()));
                 return;
             }
             //TODO: if the target type extends another type, the supertype must provide an empty constructor
@@ -167,7 +172,11 @@ namespace BinarySerializationGenerator
                 data.AddDebugLine("Child node: " + syntaxNode.ToString());
 
                 string assignedExpression;
-
+                if (syntaxNode is CastExpressionSyntax castExpression)
+                {
+                    context.ReportDiagnostic(Diagnostic.Create(BinarySerializationGenerator.NotYetSupportedDescriptor, castExpression.GetLocation(), "Cast Expressions are"));
+                    return;
+                }
                 if (syntaxNode is LiteralExpressionSyntax literalExpression)
                 {
                     Optional<object> constValue = semanticModel.GetConstantValue(literalExpression);
@@ -321,6 +330,11 @@ namespace BinarySerializationGenerator
         private static string ParseIntegralLiteral(LiteralExpressionSyntax literalExpressionSyntax, ulong value)
         {
             return value.ToString();
+        }
+
+        private static bool IsTypeInterface(TypeDeclarationSyntax typeDeclarationSyntax)
+        {
+            return typeDeclarationSyntax is InterfaceDeclarationSyntax;
         }
 
         private static bool IsDeclaredAbstract(TypeDeclarationSyntax typeDeclarationSyntax)

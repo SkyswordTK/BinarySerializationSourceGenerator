@@ -14,18 +14,33 @@ namespace BinarySerializationGenerator
     [Generator]
     public class BinarySerializationGenerator : ISourceGenerator
     {
+        public static DiagnosticDescriptor NotYetSupportedDescriptor { get; private set; }
         public static DiagnosticDescriptor TypeNotPartialDescriptor { get; private set; }
         public static DiagnosticDescriptor ParentNotPartialDescriptor { get; private set; }
         public static DiagnosticDescriptor InterpolatedStringNotAllowedDescriptor { get; private set; }
         public static DiagnosticDescriptor LiteralExpressionNotConstantDescriptor { get; private set; }
         public static DiagnosticDescriptor LiteralExpressionTypeNotSupportedDescriptor { get; private set; }
         public static DiagnosticDescriptor LiteralExpressionTypeMismatchDescriptor { get; private set; }
+        public static DiagnosticDescriptor TypeMustNotBeAbstractDescriptor { get; private set; }
+        public static DiagnosticDescriptor TypeMustNotBeAnInterfaceDescriptor { get; private set; }
 
 
         public void Initialize(GeneratorInitializationContext context)
         {
             string descriptorCategory = "Compiler (SourceGen)";
             string[] descriptorTags = new string[] { "generator", "serialize" };
+
+            NotYetSupportedDescriptor = new DiagnosticDescriptor(
+                id: "BS0000",
+                title: "Feature not yet supported.",
+                messageFormat: "{0} not yet supported by the BinarySerializationSourceGenerator. However future support is planned.",
+                category: descriptorCategory,
+                defaultSeverity: DiagnosticSeverity.Error,
+                isEnabledByDefault: true,
+                description: "This feature is not yet supported by the BinarySerializationSourceGenerator.",
+                helpLinkUri: null,
+                customTags: descriptorTags
+                );
 
             TypeNotPartialDescriptor = new DiagnosticDescriptor(
                 id: "BS0001",
@@ -95,6 +110,30 @@ namespace BinarySerializationGenerator
                 defaultSeverity: DiagnosticSeverity.Error,
                 isEnabledByDefault: true,
                 description: @"Type mismatch: Expected type {0} but got {1}.",
+                helpLinkUri: null,
+                customTags: descriptorTags
+                );
+
+            TypeMustNotBeAbstractDescriptor = new DiagnosticDescriptor(
+                id: "BS0006",
+                title: "Types marked with BinarySerializationAttribute must not be abstract.",
+                messageFormat: "Types marked with BinarySerializationAttribute must not be abstract. The type must be directly instantiatable!",
+                category: descriptorCategory,
+                defaultSeverity: DiagnosticSeverity.Error,
+                isEnabledByDefault: true,
+                description: "Types marked with BinarySerializationAttribute must not be abstract. The type must be directly instantiatable!",
+                helpLinkUri: null,
+                customTags: descriptorTags
+                );
+
+            TypeMustNotBeAnInterfaceDescriptor = new DiagnosticDescriptor(
+                id: "BS0006",
+                title: "Types marked with BinarySerializationAttribute must not be interfaces.",
+                messageFormat: "Types marked with BinarySerializationAttribute must not be an interface. The type must be directly instantiatable!",
+                category: descriptorCategory,
+                defaultSeverity: DiagnosticSeverity.Error,
+                isEnabledByDefault: true,
+                description: "Types marked with BinarySerializationAttribute must not be an interface. The type must be directly instantiatable!",
                 helpLinkUri: null,
                 customTags: descriptorTags
                 );

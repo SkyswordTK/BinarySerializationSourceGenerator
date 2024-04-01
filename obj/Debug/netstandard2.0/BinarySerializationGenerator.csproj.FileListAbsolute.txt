@@ -8,3 +8,4 @@ C:\Users\Dev\source\repos\BinarySerializationGenerator\BinarySerializationGenera
 C:\Users\Dev\source\repos\BinarySerializationGenerator\BinarySerializationGenerator\obj\Debug\netstandard2.0\BinarySerializationGenerator.csproj.CoreCompileInputs.cache
 C:\Users\Dev\source\repos\BinarySerializationGenerator\BinarySerializationGenerator\obj\Debug\netstandard2.0\BinarySerializationGenerator.dll
 C:\Users\Dev\source\repos\BinarySerializationGenerator\BinarySerializationGenerator\obj\Debug\netstandard2.0\BinarySerializationGenerator.pdb
+C:\Users\Dev\source\repos\BinarySerializationGenerator\BinarySerializationGenerator\obj\Debug\netstandard2.0\BinarySerializationGenerator.sourcelink.json

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BinarySerializationGenerator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bfa4afcaa2b9e3491f6e796840299541f3c5a0c9")]
 [assembly: System.Reflection.AssemblyProductAttribute("BinarySerializationGenerator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BinarySerializationGenerator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
